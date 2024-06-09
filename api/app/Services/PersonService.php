@@ -19,11 +19,6 @@ class PersonService
         return $this->model::create($request);
     }
 
-    public function show(Person $person)
-    {
-        return $person;
-    }
-
     public function update(array $request, Person $person)
     {
         $person->update($request);
