@@ -17,11 +17,11 @@ class PersonFactory extends Factory
     public function definition(): array
     {
         return [
-            'name'       => $this->faker->name,
-            'email'      => $this->faker->unique()->safeEmail,
-            'cpf'        => $this->faker->unique()->cpf(false),
-            'birth_date' => $this->faker->date('Y-m-d', '-18 years'),
-            'phone'      => $this->faker->phoneNumber
+            'name'       => fake('pt_BR')->name(),
+            'email'      => fake('pt_BR')->unique()->safeEmail(),
+            'cpf'        => fake('pt_BR')->unique()->numerify('###########'),
+            'birth_date' => fake('pt_BR')->date('Y-m-d', '-18 years'),
+            'phone'      => fake('pt_BR')->phoneNumberCleared()
         ];
     }
 }
