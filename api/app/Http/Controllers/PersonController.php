@@ -8,12 +8,17 @@ use Illuminate\Http\Request;
 
 class PersonController extends Controller
 {
+    public function __construct(
+        protected PersonService $service
+    ) { }
+
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-
+        return $this->service->index();
     }
 
     /**
@@ -21,7 +26,7 @@ class PersonController extends Controller
      */
     public function store(Request $request)
     {
-        
+        return $this->service->create($request->all());
     }
 
     /**
@@ -29,7 +34,7 @@ class PersonController extends Controller
      */
     public function show(Person $person)
     {
-        //
+        return $this->service->show($person);
     }
 
     /**
@@ -37,7 +42,7 @@ class PersonController extends Controller
      */
     public function update(Request $request, Person $person)
     {
-        //
+        return $this->service->update($request->all(), $person);
     }
 
     /**
@@ -45,6 +50,6 @@ class PersonController extends Controller
      */
     public function destroy(Person $person)
     {
-        //
+        return $this->service->destroy($person);
     }
 }
