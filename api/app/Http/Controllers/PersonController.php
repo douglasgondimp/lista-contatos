@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\{StorePersonRequest, UpdatePersonRequest};
 use App\Models\Person;
 use App\Services\PersonService;
 use Illuminate\Http\Request;
@@ -24,9 +25,9 @@ class PersonController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StorePersonRequest $request)
     {
-        return $this->service->create($request->all());
+        return $this->service->create($request->validated());
     }
 
     /**
@@ -40,9 +41,9 @@ class PersonController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Person $person)
+    public function update(UpdatePersonRequest $request, Person $person)
     {
-        return $this->service->update($request->all(), $person);
+        return $this->service->update($request->validated(), $person);
     }
 
     /**
