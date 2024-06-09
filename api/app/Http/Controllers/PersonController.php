@@ -35,7 +35,7 @@ class PersonController extends Controller
      */
     public function show(Person $person)
     {
-        return $person->with('contacts');
+        return Person::with('contacts')->find($person->id);
     }
 
     /**
