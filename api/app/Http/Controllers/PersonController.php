@@ -35,7 +35,7 @@ class PersonController extends Controller
      */
     public function show(Person $person)
     {
-        return $this->service->show($person);
+        return $person->with('contacts');
     }
 
     /**
