@@ -9,11 +9,6 @@ class PersonService
 {
     protected $model = Person::class;
 
-    public function index()
-    {
-        return $this->model::all();
-    }
-
     public function create(array $request)
     {
         return $this->model::create($request);
