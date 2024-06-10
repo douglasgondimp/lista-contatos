@@ -1,8 +1,10 @@
+import { Observable } from 'rxjs';
 import { NgFor } from '@angular/common';
 import { PeopleService } from '../../services/people.service';
 import { Person } from './../../models/person.model';
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { Pagination } from '../../models/pagination.model';
 
 @Component({
   selector: 'app-people',
@@ -13,13 +15,15 @@ import { RouterLink } from '@angular/router';
   styleUrl: './people.component.scss'
 })
 export class PeopleComponent {
-  people: Person[] = [];
+  people!: Person[];
+  pagination!: Pagination;
 
-  constructor(private peopleService: PeopleService) { }
+  constructor(protected peopleService: PeopleService) { }
 
   ngOnInit(): void {
-    this.peopleService.getAll().subscribe((people) => {
-      this.people = people;
+    this.peopleService.getAll().subscribe((response) => {
+      this.pagination = response;
+      this.people = response.data;
     });
   }
 
