@@ -1,27 +1,27 @@
-<header>
-    <h1>Contatos de {{ person.name }}</h1>
+<header class="pt-5 px-5">
+    <h1 class="text-2xl">Contatos de {{ person.name }}</h1>
 </header>
 
-<section>
-    <table *ngIf="contacts.length">
+<section class="pt-5 px-5">
+    <table *ngIf="contacts.length" class="tabe-auto border-collapse border border-slate-500 w-full">
         <thead>
             <tr>
-                <th>#</th>
-                <th>Nome</th>
-                <th>Email</th>
-                <th>Telefoene</th>
-                <th>WhatsApp</th>
-                <th>Ações</th>
+                <th class="p-2 border border-slate-600">#</th>
+                <th class="p-2 border border-slate-600">Nome</th>
+                <th class="p-2 border border-slate-600">Email</th>
+                <th class="p-2 border border-slate-600">Telefoene</th>
+                <th class="p-2 border border-slate-600">WhatsApp</th>
+                <th class="p-2 border border-slate-600">Ações</th>
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let contact of contacts">
-                <td>{{ contact.id }}</td>
-                <td>{{ contact.name }}</td>
-                <td>{{ contact.email }}</td>
-                <td>{{ contact.phone }}</td>
-                <td>{{ contact.whatsapp }}</td>
-                <td>--</td>
+                <td class="p-2 border border-slate-700">{{ contact.id }}</td>
+                <td class="p-2 border border-slate-700">{{ contact.name }}</td>
+                <td class="p-2 border border-slate-700">{{ contact.email }}</td>
+                <td class="p-2 border border-slate-700">{{ contact.phone }}</td>
+                <td class="p-2 border border-slate-700">{{ contact.whatsapp }}</td>
+                <td class="p-2 border border-slate-700">--</td>
             </tr>
         </tbody>
     </table>
