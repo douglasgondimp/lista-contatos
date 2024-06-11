@@ -9,13 +9,13 @@ Ferramentas utilizadas
 Para iniciar a API:
 
 ```
-$ cd api
-$ ./vendor/bin/sail up -d
+cd api
+./vendor/bin/sail up -d
 ```
 
 Para iniciar o front (dev):
 
 ```
-$ cd app
-$ ng serve -o
+cd app
+ng serve -o
 ```
