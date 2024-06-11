@@ -12,15 +12,13 @@ export const routes: Routes = [
     {
         path: 'pessoas',
         component: PeopleComponent,
-        children: [
-            {
-                path: ':id',
-                component: PeopleEditComponent
-            },
-            {
-                path: ':id/contatos',
-                component: ContactsListComponent
-            }
-        ]
+    },
+    {
+        path: 'pessoas/:id',
+        component: PeopleEditComponent
+    },
+    {
+        path: 'pessoas/:id/contatos',
+        component: ContactsListComponent
     }
 ];
