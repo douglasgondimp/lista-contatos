@@ -2,13 +2,15 @@
     <h1>Lista Pessoas</h1>
     <table class="tabe-auto border-collapse border border-slate-500 w-full">
         <thead>
-            <th class="p-2 border border-slate-600">#</th>
-            <th class="p-2 border border-slate-600">Nome</th>
-            <th class="p-2 border border-slate-600">CPF</th>
-            <th class="p-2 border border-slate-600">Telefone</th>
-            <th class="p-2 border border-slate-600">Email</th>
-            <th class="p-2 border border-slate-600">Data de nascimento</th>
-            <th class="p-2 border border-slate-600">Ações</th>
+            <tr>
+                <th class="p-2 border border-slate-600">#</th>
+                <th class="p-2 border border-slate-600">Nome</th>
+                <th class="p-2 border border-slate-600">CPF</th>
+                <th class="p-2 border border-slate-600">Telefone</th>
+                <th class="p-2 border border-slate-600">Email</th>
+                <th class="p-2 border border-slate-600">Data de nascimento</th>
+                <th class="p-2 border border-slate-600">Ações</th>
+            </tr>
         </thead>
         <tbody>
             <tr *ngFor="let person of people">
@@ -19,7 +21,7 @@
                 <td class="p-2 border border-slate-700">{{ person.email }}</td>
                 <td class="p-2 border border-slate-700">{{ person.birth_date }}</td>
                 <td class="p-2 border border-slate-700"> 
-                    <a [routerLink]="'/pessoas/'+person.id" class="bg-purple-400 px-2 py-1 rounded-lg">Contatos</a> 
+                    <a [routerLink]="'/pessoas/'+person.id+'/contatos'" class="bg-purple-400 px-2 py-1 rounded-lg">Contatos</a> 
                 </td>
             </tr>
         </tbody>
