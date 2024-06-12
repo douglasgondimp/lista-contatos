@@ -1,1 +1,9 @@
-<p>people-edit works!</p>
+<header class="px-5 pt-5">
+    <h1 class="text-center text-2xl">Editar os dados de <br> {{ person?.name }}</h1>
+</header>
+
+<div class="grid justify-items-stretch">
+    <section class="content mt-4 p-4 rounded-lg border border-slate-400 justify-self-center">
+        <app-form-person [dataPerson]="person"></app-form-person>
+    </section>
+</div>
