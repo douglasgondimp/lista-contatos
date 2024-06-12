@@ -3,8 +3,8 @@ export interface Person {
     name: string;
     cpf: string;
     email: string;
-    phone: string;
-    birth_date: Date;
+    phone?: string;
+    birth_date?: Date|null;
     created_at?: Date;
     updated_at?: Date;
     deleted_at?: Date;
