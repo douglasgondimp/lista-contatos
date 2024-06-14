@@ -1,11 +1,11 @@
 export interface Person {
-    id?: number;
+    id?: number|null;
     name: string;
     cpf: string;
     email: string;
-    phone?: string;
+    phone?: string|null;
     birth_date?: Date|null;
-    created_at?: Date;
-    updated_at?: Date;
-    deleted_at?: Date;
+    created_at?: Date|null;
+    updated_at?: Date|null;
+    deleted_at?: Date|null;
 }
