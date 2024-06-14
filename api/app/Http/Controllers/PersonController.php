@@ -17,10 +17,9 @@ class PersonController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(Request $request)
+    public function index()
     {
-        $paginate = $request->get('paginate', 15);
-        return Person::paginate($paginate);
+        return Person::all();
     }
 
     /**
@@ -57,7 +56,6 @@ class PersonController extends Controller
 
     public function getContacts(Request $request, Person $person)
     {   
-        $paginate = $request->get('paginate', 15);
-        return $person->contacts()->paginate($paginate);
+        return $person->contacts()->get();
     }
 }
