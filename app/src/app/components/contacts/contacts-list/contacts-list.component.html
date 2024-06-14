@@ -3,7 +3,9 @@
 </header>
 
 <section class="pt-5 px-5">
-    <table *ngIf="contacts.length" class="tabe-auto border-collapse border border-slate-500 w-full">
+    <a [routerLink]="'/pessoas/'+person.id+'/novo-contato'" class="bg-orange-400 px-2 py-1 rounded-lg">Novo Contato</a>
+
+    <table *ngIf="contacts.length" class="tabe-auto border-collapse border border-slate-500 mt-4 w-full">
         <thead>
             <tr>
                 <th class="p-2 border border-slate-600">#</th>
@@ -21,7 +23,10 @@
                 <td class="p-2 border border-slate-700">{{ contact.email }}</td>
                 <td class="p-2 border border-slate-700">{{ contact.phone }}</td>
                 <td class="p-2 border border-slate-700">{{ contact.whatsapp }}</td>
-                <td class="p-2 border border-slate-700">--</td>
+                <td class="p-2 border border-slate-700">
+                    <a [routerLink]="'/contatos/'+contact.id+'/editar'" class="bg-blue-600 px-2 py-1 rounded-lg">Editar</a>
+                    <button type="button" class="bg-red-400 px-2 ml-3 rounded-lg">Excluir</button> 
+                </td>
             </tr>
         </tbody>
     </table>

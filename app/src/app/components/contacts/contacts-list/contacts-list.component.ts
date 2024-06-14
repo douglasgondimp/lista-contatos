@@ -3,14 +3,14 @@ import { Component } from '@angular/core';
 import { Contact } from '../../../models/contact.mode';
 import { Pagination } from '../../../models/pagination.model';
 import { routes } from '../../../app.routes';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { NgFor, NgIf } from '@angular/common';
 import { Person } from '../../../models/person.model';
 
 @Component({
   selector: 'app-contacts-list',
   standalone: true,
-  imports: [NgFor, NgIf],
+  imports: [NgFor, NgIf, RouterLink],
   providers: [PeopleService],
   templateUrl: './contacts-list.component.html',
   styleUrl: './contacts-list.component.scss'
@@ -36,8 +36,7 @@ export class ContactsListComponent {
 
   getContacts(id: number) {
     this.peopleService.getContacts(id).subscribe((response) => {
-      this.pagination = response;
-      this.contacts = response.data;
+      this.contacts = response;
     })
   }
 
