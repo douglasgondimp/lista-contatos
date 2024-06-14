@@ -1,0 +1,11 @@
+<section class="grid justify-items-stretch py-5">
+    <div class="content mt-4 p-4 rounded-lg border border-slate-400 w-2/5 justify-self-center">
+        <p>Validação de entradas de colchetes. </p>
+
+        <input type="text" class="w-full rounded-lg border border-slate-500 bg-slate-700 py-1 px-2" 
+        [(ngModel)]="entrance">
+        <small [class]="message.class">{{ message.text }}</small>
+
+        <button type="button" class="mt-5 block bg-green-600 text-slate-300 rounded-lg py-1 px-3 text-lg" (click)="validateEntrance()">Validar</button>
+    </div>
+</section>
