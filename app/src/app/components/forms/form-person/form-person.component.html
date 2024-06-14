@@ -5,7 +5,7 @@
     </div>
     <div class="mb-3">
         <label class="block" for="cpf">CPF <span class="text-red-600">*</span></label>
-        <input class="w-full rounded-lg border border-slate-500 bg-slate-700 py-1 px-2" type="text" id="cpf" name="cpf" [(ngModel)]="person.cpf">
+        <input mask="000.000.000-00" [dropSpecialCharacters]="false" class="w-full rounded-lg border border-slate-500 bg-slate-700 py-1 px-2" type="text" id="cpf" name="cpf" [(ngModel)]="person.cpf">
     </div>
     <div class="mb-3">
         <label class="block" for="email">E-mail <span class="text-red-600">*</span></label>
@@ -13,7 +13,7 @@
     </div>
     <div class="mb-3">
         <label class="block" for="phone">Telefone</label>
-        <input class="w-full rounded-lg border border-slate-500 bg-slate-700 py-1 px-2" type="text" id="phone" name="phone" [(ngModel)]="person.phone">
+        <input mask="(00) 00000-0000" [dropSpecialCharacters]="false" class="w-full rounded-lg border border-slate-500 bg-slate-700 py-1 px-2" type="text" id="phone" name="phone" [(ngModel)]="person.phone">
     </div>
     <div class="mb-3">
         <label class="block" for="birth_date">Data nascimento</label>
