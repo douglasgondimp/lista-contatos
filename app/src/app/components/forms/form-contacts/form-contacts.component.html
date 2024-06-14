@@ -12,8 +12,8 @@
         <input mask="(00) 00000-0000" [dropSpecialCharacters]="false" class="w-full rounded-lg border border-slate-500 bg-slate-700 py-1 px-2" type="text" id="phone" name="phone" [(ngModel)]="contact.phone">
     </div>
     <div class="mb-3">
-        <label class="block" for="cpf">Whatsapp <span class="text-red-600">*</span></label>
-        <input mask="000.000.000-00" [dropSpecialCharacters]="false" class="w-full rounded-lg border border-slate-500 bg-slate-700 py-1 px-2" type="text" id="cpf" name="cpf" [(ngModel)]="contact.whatsapp">
+        <label class="block" for="whatsapp">Whatsapp </label>
+        <input mask="(00) 00000-0000" [dropSpecialCharacters]="false" class="w-full rounded-lg border border-slate-500 bg-slate-700 py-1 px-2" type="text" id="whatsapp" name="whatsapp" [(ngModel)]="contact.whatsapp">
     </div>
     
     <button type="submit" class="bg-green-600 text-slate-300 rounded-lg py-1 px-3 text-lg">Enviar</button>

@@ -14,10 +14,17 @@ import { Router } from '@angular/router';
   styleUrl: './form-contacts.component.scss'
 })
 export class FormContactsComponent {
-  @Input() personId!: number|undefined;
+  @Input() personId?: number;
   @Input() contactId!: number|null;
 
-  contact!: Contact;
+  contact: Contact = {
+    id: null,
+    person_id: 0,
+    name: '',
+    email: '',
+    phone: '',
+    whatsapp: ''
+  };
 
   constructor(
     protected contactService: ContactService,
