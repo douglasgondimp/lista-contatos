@@ -2,10 +2,10 @@ export interface Contact {
     id?: number;
     person_id: number;
     name: string;
-    email: string;
-    phone: string;
-    whatsapp: string;
-    created_at?: Date;
-    updated_at?: Date;
-    deleted_at?: Date;
+    email: string|null;
+    phone: string|null;
+    whatsapp: string|null;
+    created_at?: Date|null;
+    updated_at?: Date|null;
+    deleted_at?: Date|null;
 }
