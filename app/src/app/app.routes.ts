@@ -5,6 +5,7 @@ import { PeopleEditComponent } from './components/people/people-edit/people-edit
 import { PeopleNewComponent } from './components/people/people-new/people-new.component';
 import { ContactsNewComponent } from './components/contacts/contacts-new/contacts-new.component';
 import { InputValidateComponent } from './view/input-validate/input-validate.component';
+import { ContactsEditComponent } from './components/contacts/contacts-edit/contacts-edit.component';
 
 export const routes: Routes = [
     {
@@ -35,6 +36,9 @@ export const routes: Routes = [
     {
         path: 'valida-expressao',
         component: InputValidateComponent
+    },
+    {
+        path: 'contatos/:id/editar',
+        component: ContactsEditComponent
     }
-
 ];
