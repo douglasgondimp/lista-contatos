@@ -25,8 +25,9 @@
                 <td class="p-2 border border-slate-700">{{ person.email }}</td>
                 <td class="p-2 border border-slate-700">{{ person.birth_date }}</td>
                 <td class="p-2 border border-slate-700"> 
-                    <a [routerLink]="'/pessoas/'+person.id+'/editar'" class="bg-blue-600 px-2 py-1 rounded-lg">Editar</a>
-                    <a [routerLink]="'/pessoas/'+person.id+'/contatos'" class="bg-purple-400 px-2 py-1 ml-3 rounded-lg">Contatos</a> 
+                    <a [routerLink]="'/pessoas/'+person.id+'/editar'" class="bg-blue-600 px-2 py-1 rounded-lg cursor-pointer">Editar</a>
+                    <a [routerLink]="'/pessoas/'+person.id+'/contatos'" class="bg-purple-400 px-2 py-1 ml-3 rounded-lg cursor-pointer">Contatos</a> 
+                    <a (click)="deletePerson(person.id)" class="bg-red-400 px-2 py-1 ml-3 rounded-lg cursor-pointer">Excluir</a> 
                 </td>
             </tr>
         </tbody>

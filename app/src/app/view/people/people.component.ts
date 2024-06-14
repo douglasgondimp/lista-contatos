@@ -25,4 +25,9 @@ export class PeopleComponent {
     });
   }
 
+  deletePerson(id: number) {
+    this.peopleService.delete(id).subscribe((response) => {
+      this.people = this.people.filter((person) => person.id !== id);
+    });
+  }
 }
