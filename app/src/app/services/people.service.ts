@@ -34,4 +34,8 @@ export class PeopleService {
     create(person: Person): Observable<Person>{
         return this.http.post<Person>(`${this.baseUrl}`, person);
     }
+
+    delete(id: number): Observable<Person>{
+        return this.http.delete<Person>(`${this.baseUrl}/${id}`);
+    }
 }

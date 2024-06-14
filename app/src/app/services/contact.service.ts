@@ -1,6 +1,6 @@
+import { Contact } from './../models/contact.mode';
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Contact } from "../models/contact.mode";
 import { Observable } from "rxjs";
 
 @Injectable({
@@ -23,5 +23,9 @@ export class ContactService {
 
     create(contact: Contact): Observable<Contact>{
         return this.http.post<Contact>(`${this.baseUrl}`, contact);
+    }
+
+    delete(id: number): Observable<Contact>{
+        return this.http.delete<Contact>(`${this.baseUrl}/${id}`);
     }
 }
