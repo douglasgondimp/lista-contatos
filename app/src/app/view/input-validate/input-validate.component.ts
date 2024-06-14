@@ -10,28 +10,32 @@ import { FormsModule } from '@angular/forms';
 })
 export class InputValidateComponent {
   entrance!: string;
-  map: any = {
-    ')': '(',
-    ']': '[',
-    '}': '{'
-  };
-  message: any = {
-    'text': '',
-    'class': ''
+  message = {
+    text: '',
+    class: ''
   }
 
-  validateEntrance() {
-    if (!this.entrance) return;
+  validateEntrance(): boolean {
+    if (!this.entrance) return false;
     
-    const arr = [];
+    let test: boolean = true;
+    const map: {[key:string]: string} = {
+      ')': '(',
+      '}': '{',
+      ']': '['
+    }
+    const arr: string[] = [];
 
     for (let c of this.entrance) {
-      if (this.map[c]) {
+      if (map[c]) {
         const el = arr.length > 0 ? arr.pop() : '#';
+        console.log(el, map[c]);
 
-        if (this.map[c] !== el) {
+        if (map[c] != el) {
           this.message.text = 'Entrada inválida!';
-          this.message.class = 'text-red-600'
+          this.message.class = 'text-red-600';
+
+          return false;
         }
       } else {
         arr.push(c);
@@ -41,11 +45,13 @@ export class InputValidateComponent {
     if (arr.length === 0) {
       this.message.text = 'Entrada válida!';
       this.message.class = 'text-green-600';
-    } else {
-      this.message.text = 'Entrada inválida!';
-      this.message.class = 'text-red-600';
-    }
 
-    console.log("passou", arr);
+      return true;
+    } 
+
+    this.message.text = 'Entrada inválida!';
+    this.message.class = 'text-red-600';
+
+    return false;
   }
 }
