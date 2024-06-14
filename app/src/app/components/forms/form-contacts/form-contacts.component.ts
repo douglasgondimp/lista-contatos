@@ -44,10 +44,10 @@ export class FormContactsComponent {
   }
 
   sendForm() {
-    if (this.contact.id) {
+    if (this.contactId) {
       this.contactService.update(this.contact).subscribe(
         (response) => {
-          this.router.navigate(['/pessoas/'+this.personId+'/contatos']);
+          this.router.navigate(['/pessoas/'+this.contact.person_id+'/contatos']);
         },
         (error) => {
           console.log(error);
