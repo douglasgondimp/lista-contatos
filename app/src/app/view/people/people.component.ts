@@ -16,14 +16,12 @@ import { Pagination } from '../../models/pagination.model';
 })
 export class PeopleComponent {
   people!: Person[];
-  pagination!: Pagination;
 
   constructor(protected peopleService: PeopleService) { }
 
   ngOnInit(): void {
     this.peopleService.getAll().subscribe((response) => {
-      this.pagination = response;
-      this.people = response.data;
+      this.people = response;
     });
   }
 
