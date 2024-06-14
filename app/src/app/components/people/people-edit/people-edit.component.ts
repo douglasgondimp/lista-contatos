@@ -14,7 +14,7 @@ import { PeopleService } from '../../../services/people.service';
 })
 export class PeopleEditComponent {
   personId!: number;
-  person?: Person;
+  person!: Person;
 
   constructor(
     private actRoute: ActivatedRoute,
