@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -19,6 +20,20 @@ class Contact extends Model
         'phone',
         'whatsapp'
     ];
+
+    public function whatsapp(): Attribute
+    {
+        return new Attribute(
+            set: fn($value) => trim( preg_replace('/[^0-9]/', '', $value) )
+        );
+    }
+
+    public function phone(): Attribute
+    {
+        return new Attribute(
+            set: fn($value) => trim( preg_replace('/[^0-9]/', '', $value) )
+        );
+    }
 
     public function person(): BelongsTo
     {
