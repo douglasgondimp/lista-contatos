@@ -1,3 +1,4 @@
+import { ContactService } from './../../../services/contact.service';
 import { PeopleService } from './../../../services/people.service';
 import { Component } from '@angular/core';
 import { Contact } from '../../../models/contact.mode';
@@ -23,6 +24,7 @@ export class ContactsListComponent {
 
   constructor(
     protected peopleService: PeopleService,
+    protected contactSercvice: ContactService,
     protected actRoute: ActivatedRoute
   ) { }
 
@@ -33,7 +35,6 @@ export class ContactsListComponent {
     this.getPerson(this.person_id);
   }
 
-
   getContacts(id: number) {
     this.peopleService.getContacts(id).subscribe((response) => {
       this.contacts = response;
@@ -43,6 +44,12 @@ export class ContactsListComponent {
   getPerson(id:number) {
     this.peopleService.getByID(id).subscribe((response) => {
       this.person = response;
+    })
+  }
+
+  deleteContact(id: any) {
+    this.contactSercvice.delete(id).subscribe((response) => {
+      this.getContacts(this.person_id);
     })
   }
 }

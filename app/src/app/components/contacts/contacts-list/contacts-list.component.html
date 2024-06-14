@@ -25,7 +25,7 @@
                 <td class="p-2 border border-slate-700">{{ contact.whatsapp }}</td>
                 <td class="p-2 border border-slate-700">
                     <a [routerLink]="'/contatos/'+contact.id+'/editar'" class="bg-blue-600 px-2 py-1 rounded-lg">Editar</a>
-                    <button type="button" class="bg-red-400 px-2 ml-3 rounded-lg">Excluir</button> 
+                    <a (click)="deleteContact(contact.id)" type="button" class="bg-red-400 px-2 py-1 ml-3 rounded-lg cursor-pointer">Excluir</a> 
                 </td>
             </tr>
         </tbody>
