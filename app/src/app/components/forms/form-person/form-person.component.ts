@@ -15,19 +15,13 @@ import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
 })
 export class FormPersonComponent {
   @Input() dataPerson?: Person
-  protected router!: Router;
+  
 
-  person: Person = {
-    id: null,
-    name: '',
-    cpf: '',
-    email: '',
-    phone: '',
-    birth_date: null
-  }
+  person!: Person;
 
   constructor(
-    protected peopleService: PeopleService
+    protected peopleService: PeopleService,
+    protected router: Router
   ) { }
 
   ngOnInit(): void {
@@ -40,7 +34,7 @@ export class FormPersonComponent {
     if (this.person.id) {
       this.peopleService.update(this.person).subscribe(
         (response) => {
-          this.router.navigate(['/people']);
+          this.router.navigate(['/pessoas']);
         },
         (error) => {
           console.log(error);
@@ -49,7 +43,7 @@ export class FormPersonComponent {
     } else {
       this.peopleService.create(this.person).subscribe(
         (response) => {
-          this.router.navigate(['/people']);
+          this.router.navigate(['/pessoas']);
         },
         (error) => {
           console.log(error);
